@@ -1,0 +1,2725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RR SACCO - Premium Savings and Credit Cooperative Society">
+    <meta name="keywords" content="SACCO, savings cooperative, loans, financial services, Kenya">
+    <title>RR SACCO | Trusted Financial Partnership</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e5631;
+            --primary-dark: #0d3b2f;
+            --primary-light: #e8f5e9;
+            --secondary: #00897b;
+            --secondary-light: #b2dfdb;
+            --accent-orange: #ff6b35;
+            --accent-gold: #f7b801;
+            --accent-blue: #0066cc;
+            --accent-red: #e63946;
+            --accent-purple: #7209b7;
+            --accent-pink: #f72585;
+            --dark: #1a1a1a;
+            --light: #f5f7fa;
+            --gray: #666;
+            --gray-light: #e8e8e8;
+            --border: #e0e0e0;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --shadow-colored: 0 8px 24px rgba(30, 86, 49, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: linear-gradient(90deg, #1e5631 0%, #0d3b2f 50%, #00897b 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-colored);
+        }
+
+        .navbar-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+            flex: 1;
+        }
+
+        .nav-item {
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .nav-item:hover {
+            color: #f7b801;
+            transform: translateY(-2px);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f7b801, #ff6b35);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+            border-top: 3px solid var(--accent-orange);
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            max-height: 300px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu a:hover {
+            background: linear-gradient(90deg, #e8f5e9, #b2dfdb);
+            color: var(--primary);
+            border-left-color: var(--accent-orange);
+            padding-left: 1.5rem;
+        }
+
+        .nav-btn {
+            margin-left: auto;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e5631, #0d3b2f);
+            color: white;
+            border-color: #1e5631;
+            box-shadow: 0 4px 15px rgba(30, 86, 49, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 86, 49, 0.4);
+            border-color: #f7b801;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #00897b, #004d40);
+            color: white;
+            border-color: #00897b;
+            box-shadow: 0 4px 15px rgba(0, 137, 123, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 137, 123, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e5631 0%, #0d3b2f 25%, #00897b 50%, #004d40 75%, #1e5631 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1), transparent),
+                        radial-gradient(circle at 80% 80%, rgba(247, 184, 1, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #f7b801);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            animation: slideInLeft 0.8s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            animation: slideInLeft 0.8s ease 0.1s both;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: slideInLeft 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: slideInLeft 0.8s ease 0.3s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .stat {
+            text-align: center;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #f7b801, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .stat p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-card {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7b801 50%, #00897b 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255,255,255,0.25);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== QUICK BENEFITS ===== */
+        .quick-benefits {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            padding: 60px 0;
+            box-shadow: var(--shadow-colored);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-box {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(30, 86, 49, 0.15);
+            border-color: var(--accent-orange);
+        }
+
+        .benefit-box i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, #ffffff, #e8f5e9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-orange);
+            box-shadow: 0 4px 15px rgba(30, 86, 49, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+            border-left-color: var(--accent-gold);
+        }
+
+        .about-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .values-heading {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .value {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .value:hover {
+            background: linear-gradient(90deg, rgba(0, 102, 204, 0.05), rgba(114, 9, 183, 0.05));
+            transform: translateX(5px);
+        }
+
+        .value i {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7b801 50%, #1e5631 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.3);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #ffffff, #f5f7fa);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0, 137, 123, 0.1), transparent);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover::after {
+            top: -10%;
+            right: -10%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.2);
+            border-top-color: var(--accent-orange);
+        }
+
+        .product-card.featured {
+            background: linear-gradient(135deg, #e8f5e9, #b2dfdb);
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-header i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-header h3 {
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .product-desc {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features li {
+            padding: 0.75rem 0;
+            color: var(--dark);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features strong {
+            color: var(--accent-blue);
+        }
+
+        /* ===== LOANS SECTION ===== */
+        .loans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .loan-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .loan-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 137, 123, 0.2);
+            border-color: var(--accent-orange);
+        }
+
+        .loan-card.highlighted {
+            background: linear-gradient(135deg, #e8f5e9, #b2dfdb);
+            border: 2px solid var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .urgent-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #e63946, #f72585);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .loan-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .loan-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .loan-details {
+            background: linear-gradient(135deg, #f5f7fa, #e8f5e9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail span {
+            color: var(--gray);
+        }
+
+        .detail strong {
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        /* ===== CALCULATOR SECTION ===== */
+        .calculator-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+        }
+
+        .calculator-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .calc-form-card,
+        .calc-results {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-colored);
+            border: 2px solid transparent;
+        }
+
+        .calc-form-card:hover,
+        .calc-results:hover {
+            border-color: var(--accent-orange);
+        }
+
+        .calc-form-card h3,
+        .calc-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .calc-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            background: linear-gradient(90deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff, #f5f7fa);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group small {
+            margin-top: 0.3rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .slider-container input[type="range"] {
+            flex: 1;
+            padding: 0;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.5);
+        }
+
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .period-display {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 140px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #e8f5e9, #b2dfdb);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 2px solid var(--secondary);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 137, 123, 0.2);
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .result-item span {
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .result-item strong {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .result-highlight {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .result-highlight .result-item {
+            border-bottom: none;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+
+        .result-highlight .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .calc-results .result-item strong {
+            font-size: 1.2rem;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reason-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(247, 184, 1, 0.05));
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(30, 86, 49, 0.15);
+            border-color: var(--accent-orange);
+        }
+
+        .reason-card:hover::before {
+            opacity: 1;
+        }
+
+        .reason-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .reason-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 4rem;
+            color: rgba(0, 102, 204, 0.1);
+            font-weight: 700;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(30, 86, 49, 0.2);
+            border-left-color: var(--accent-orange);
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .testimonial-author h5 {
+            margin: 0;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .testimonial-author p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: normal;
+        }
+
+        /* ===== INSIGHTS ===== */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.2);
+            border-color: var(--accent-orange);
+        }
+
+        .insight-image {
+            height: 200px;
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .insight-card > span {
+            display: block;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding-top: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .insight-card h4 {
+            margin: 0.5rem 0 0;
+            color: var(--dark);
+            font-size: 1.2rem;
+            padding: 0 1.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .insight-card > p {
+            color: var(--gray);
+            padding: 1rem 1.5rem 0.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 1.5rem 1.5rem 1.5rem;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .read-more:hover {
+            transform: translateX(5px);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+        }
+
+        .faq-header {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e8f5e9, #b2dfdb);
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .faq-header:hover {
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+            border-bottom-color: var(--accent-orange);
+        }
+
+        .faq-header i {
+            transition: transform 0.3s ease;
+            color: var(--accent-orange);
+        }
+
+        .faq-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-body.show {
+            padding: 1.5rem;
+            max-height: 500px;
+            background: linear-gradient(135deg, #f5f7fa, #e8f5e9);
+        }
+
+        .faq-body p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* ===== MEMBERSHIP FORM ===== */
+        .membership-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .membership-form-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-colored);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .membership-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: linear-gradient(135deg, #e8f5e9, #b2dfdb);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .checkbox input {
+            width: auto;
+            cursor: pointer;
+            accent-color: var(--accent-orange);
+        }
+
+        .checkbox a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:nth-child(1) {
+            border-top-color: var(--accent-blue);
+        }
+
+        .contact-info-card:nth-child(2) {
+            border-top-color: var(--accent-orange);
+        }
+
+        .contact-info-card:nth-child(3) {
+            border-top-color: var(--accent-purple);
+        }
+
+        .contact-info-card:nth-child(4) {
+            border-top-color: var(--accent-gold);
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(30, 86, 49, 0.15);
+        }
+
+        .contact-info-card i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .contact-form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-colored);
+            border: 2px solid var(--accent-orange);
+        }
+
+        .contact-form h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d3b2f 100%);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #f7b801, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: #f7b801;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-top: 4px solid var(--accent-orange);
+            animation: slideInUp 0.3s ease;
+        }
+
+        .modal-close {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-orange);
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h2 {
+            margin: 1rem 0;
+            background: linear-gradient(135deg, #1e5631, #00897b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: linear-gradient(135deg, #1e5631, #00897b);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                color: white;
+            }
+
+            .nav-btn {
+                margin: 1rem;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .calculator-wrapper,
+            .contact-form-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo span {
+                display: none;
+            }
+
+            .nav-item {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .product-card,
+            .loan-card,
+            .about-card {
+                padding: 1.5rem;
+            }
+
+            .calc-form-card,
+            .calc-results {
+                padding: 1.5rem;
+            }
+
+            .benefit-box,
+            .reason-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-wrapper">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>RR SACCO</span>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#about" class="nav-item">About Us</a>
+                
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-item dropdown-trigger">Our Services</a>
+                    <div class="dropdown-menu">
+                        <a href="#savings">Savings Products</a>
+                        <a href="#loans">Loan Products</a>
+                        <a href="#investments">Investment Options</a>
+                    </div>
+                </div>
+
+                <a href="#calculator" class="nav-item">Loan Calculator</a>
+                <a href="#insights" class="nav-item">Insights</a>
+                <a href="#contact" class="nav-item">Contact</a>
+                <a href="#membership" class="nav-btn btn btn-primary">Join Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag">Financial Empowerment</span>
+                <h1>Your Partnership for Sustainable Wealth Growth</h1>
+                <p>Join thousands of members building financial security through smart savings and affordable credit solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#membership" class="btn btn-primary btn-lg">Open Account</a>
+                    <a href="#calculator" class="btn btn-outline btn-lg">Calculate Returns</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Active Members</p>
+                    </div>
+                    <div class="stat">
+                        <h3>KSh 1M+</h3>
+                        <p>Member Savings</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Benefits -->
+<section class="quick-benefits">
+    <div class="container">
+        <div class="benefits-grid">
+            <div class="benefit-box">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Secure & Regulated</h4>
+                <p>Licensed and regulated by relevant authorities</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fas fa-percent"></i>
+                <h4>Competitive Returns</h4>
+                <p>Up to 15% annual dividend on savings</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fas fa-handshake"></i>
+                <h4>Transparent Rates</h4>
+                <p>No hidden fees or surprise charges</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fas fa-headset"></i>
+                <h4>Expert Support</h4>
+                <p>Dedicated team available to help you</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>About RR SACCO</h2>
+                <p class="intro-text">We're committed to empowering our members through accessible financial services and creating sustainable prosperity for our community.</p>
+                
+                <div class="about-cards">
+                    <div class="about-card">
+                        <h4>Our Vision</h4>
+                        <p>To be Kenya's most trusted SACCO providing innovative financial solutions for economic empowerment.</p>
+                    </div>
+                    <div class="about-card">
+                        <h4>Our Mission</h4>
+                        <p>Mobilizing savings, providing affordable credit, and fostering financial literacy among all members.</p>
+                    </div>
+                </div>
+
+                <h4 class="values-heading">Our Core Values</h4>
+                <div class="values-list">
+                    <div class="value">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Integrity & Honesty</span>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Transparency</span>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Accountability</span>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Member Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Savings Products -->
+<section class="section products" id="savings">
+    <div class="container">
+        <div class="section-header">
+            <h2>Savings Products</h2>
+            <p>Build wealth with our flexible savings solutions</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-header">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>Savings Account</h3>
+                </div>
+                <p class="product-desc">Start small, grow big with our core savings product</p>
+                <ul class="features">
+                    <li><strong>Minimum:</strong> KSh 500</li>
+                    <li><strong>Annual Dividend:</strong> Up to 15%</li>
+                    <li><strong>Safety:</strong> Fully Insured</li>
+                    <li><strong>Withdrawal:</strong> Anytime (with notice)</li>
+                </ul>
+                <a href="#membership" class="btn btn-secondary btn-sm">Open Account</a>
+            </div>
+
+            <div class="product-card featured">
+                <span class="badge">Popular</span>
+                <div class="product-header">
+                    <i class="fas fa-star"></i>
+                    <h3>Premium Savings</h3>
+                </div>
+                <p class="product-desc">Enhanced benefits for committed savers</p>
+                <ul class="features">
+                    <li><strong>Minimum:</strong> KSh 10,000</li>
+                    <li><strong>Annual Dividend:</strong> Up to 18%</li>
+                    <li><strong>Priority:</strong> Loan Access</li>
+                    <li><strong>Bonus:</strong> Referral Rewards</li>
+                </ul>
+                <a href="#membership" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Fixed Deposit</h3>
+                </div>
+                <p class="product-desc">Lock in guaranteed returns for fixed periods</p>
+                <ul class="features">
+                    <li><strong>Terms:</strong> 6 - 24 Months</li>
+                    <li><strong>Guaranteed Return:</strong> 10-12%</li>
+                    <li><strong>Flexible:</strong> Early Withdrawal Option</li>
+                    <li><strong>Maturity:</strong> Auto Renewal</li>
+                </ul>
+                <a href="#membership" class="btn btn-secondary btn-sm">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Loan Products -->
+<section class="section loans" id="loans">
+    <div class="container">
+        <div class="section-header">
+            <h2>Loan Solutions</h2>
+            <p>Affordable credit when you need it most</p>
+        </div>
+
+        <div class="loans-grid">
+            <div class="loan-card">
+                <div class="loan-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Development Loan</h3>
+                <p>For business and personal projects</p>
+                <div class="loan-details">
+                    <div class="detail">
+                        <span>Max Amount:</span>
+                        <strong>4× Your Shares</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Interest Rate:</span>
+                        <strong>11% p.a.</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Repayment:</span>
+                        <strong>Up to 60 Months</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Processing Fee:</span>
+                        <strong>2%</strong>
+                    </div>
+                </div>
+                <a href="#calculator" class="btn btn-outline btn-sm">Calculate</a>
+            </div>
+
+            <div class="loan-card highlighted">
+                <span class="urgent-badge">Fast Track</span>
+                <div class="loan-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Emergency Loan</h3>
+                <p>Quick cash for urgent needs</p>
+                <div class="loan-details">
+                    <div class="detail">
+                        <span>Interest Rate:</span>
+                        <strong>7% p.a.</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Repayment:</span>
+                        <strong>1 Month</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Processing:</span>
+                        <strong>24 Hours</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Documentation:</span>
+                        <strong>Minimal</strong>
+                    </div>
+                </div>
+                <a href="#calculator" class="btn btn-primary btn-sm">Apply Now</a>
+            </div>
+
+            <div class="loan-card">
+                <div class="loan-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Education Loan</h3>
+                <p>Invest in your future through education</p>
+                <div class="loan-details">
+                    <div class="detail">
+                        <span>Max Amount:</span>
+                        <strong>KSh 500,000</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Interest Rate:</span>
+                        <strong>9% p.a.</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Repayment:</span>
+                        <strong>12-36 Months</strong>
+                    </div>
+                    <div class="detail">
+                        <span>Grace Period:</span>
+                        <strong>3 Months</strong>
+                    </div>
+                </div>
+                <a href="#membership" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Loan Calculator -->
+<section class="section calculator-section" id="calculator">
+    <div class="container">
+        <div class="section-header">
+            <h2>Loan Calculator</h2>
+            <p>See exactly how much you'll pay each month</p>
+        </div>
+
+        <div class="calculator-wrapper">
+            <div class="calc-form-card">
+                <h3>Calculate Your Payment</h3>
+                
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label>Your Total Shares (KSh)</label>
+                        <input type="number" id="shareAmount" value="50000" min="500" placeholder="50000">
+                        <small>Minimum: KSh 500</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Type</label>
+                        <select id="loanType" onchange="updateCalculator()">
+                            <option value="development">Development Loan (11%)</option>
+                            <option value="emergency">Emergency Loan (7%)</option>
+                            <option value="education">Education Loan (9%)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Desired Loan Amount (KSh)</label>
+                        <input type="number" id="loanAmount" value="100000" min="0" placeholder="100000">
+                        <small id="loanLimit">Maximum: KSh 200,000</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Repayment Period</label>
+                        <div class="slider-container">
+                            <input type="range" id="loanPeriod" value="12" min="1" max="60" oninput="updatePeriodDisplay()">
+                            <div class="period-display">
+                                <span id="periodValue">12</span> months
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="calculateLoan()">Calculate</button>
+                </div>
+            </div>
+
+            <div class="calc-results" id="calcResults" style="display:none;">
+                <h3>Payment Breakdown</h3>
+                
+                <div class="result-box">
+                    <div class="result-item">
+                        <span>Loan Amount</span>
+                        <strong id="resLoanAmt">KSh 0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Interest Rate</span>
+                        <strong id="resRate">0%</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Processing Fee</span>
+                        <strong id="resFee">KSh 0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Interest</span>
+                        <strong id="resInterest">KSh 0</strong>
+                    </div>
+                </div>
+
+                <div class="result-highlight">
+                    <div class="result-item">
+                        <span>Total Repayment</span>
+                        <strong id="resTotal">KSh 0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Monthly Payment</span>
+                        <strong id="resMonthly">KSh 0</strong>
+                    </div>
+                </div>
+
+                <a href="#membership" class="btn btn-primary btn-block" style="margin-top: 20px;">Apply for Loan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section why-choose">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose RR SACCO?</h2>
+            <p>Experience the difference of member-focused financial services</p>
+        </div>
+
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h4>Secure & Safe</h4>
+                <p>Your funds are protected with modern security infrastructure and strict governance standards.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h4>Better Returns</h4>
+                <p>Earn competitive dividends that beat traditional savings and investment alternatives.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <h4>Affordable Credit</h4>
+                <p>Access loans at fair rates without the bureaucracy of traditional banks.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Community First</h4>
+                <p>Join a supportive network where members help each other succeed.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h4>Financial Education</h4>
+                <p>Access free resources and training to improve your financial literacy.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h4>Personal Service</h4>
+                <p>Our team knows you personally and understands your financial goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Member Success Stories</h2>
+            <p>Hear how RR SACCO has transformed lives</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"RR SACCO gave me access to capital I needed to expand my business. The loan process was smooth and transparent."</p>
+                <div class="testimonial-author">
+                    <div class="avatar">SK</div>
+                    <div>
+                        <h5>Samuel Kipchoge</h5>
+                        <p>Business Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The dividends I receive every year significantly boost my savings. It's peace of mind knowing my money is working for me."</p>
+                <div class="testimonial-author">
+                    <div class="avatar">JM</div>
+                    <div>
+                        <h5>Jane Mwangi</h5>
+                        <p>Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"What impressed me most is the transparency and personal service. They genuinely care about member success."</p>
+                <div class="testimonial-author">
+                    <div class="avatar">PC</div>
+                    <div>
+                        <h5>Peter Kipchoge</h5>
+                        <p>Civil Servant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insights/Blog -->
+<section class="section insights" id="insights">
+    <div class="container">
+        <div class="section-header">
+            <h2>Financial Insights</h2>
+            <p>Expert tips and financial guidance</p>
+        </div>
+
+        <div class="insights-grid">
+            <article class="insight-card">
+                <div class="insight-image">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <span class="insight-date">April 13, 2026</span>
+                <h4>10 Savings Habits for Financial Freedom</h4>
+                <p>Learn practical strategies to build wealth and secure your financial future through consistent saving.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <article class="insight-card">
+                <div class="insight-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="insight-date">April 10, 2026</span>
+                <h4>Understanding Dividends and Returns</h4>
+                <p>A comprehensive guide to how SACCO dividends work and how to maximize your investment returns.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <article class="insight-card">
+                <div class="insight-image">
+                    <i class="fas fa-book"></i>
+                </div>
+                <span class="insight-date">April 5, 2026</span>
+                <h4>Borrowing Smart: Loan Tips for Members</h4>
+                <p>Expert advice on taking loans wisely and ensuring you meet your financial goals without overstretching.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section faq">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>What's the minimum to join RR SACCO?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>You need a minimum of KSh 500 to open a savings account. This is your initial share capital in the SACCO.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>How much can I borrow?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>You can borrow up to 4 times your total savings. For example, if you have KSh 50,000 saved, you can borrow up to KSh 200,000.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>When do I receive my dividends?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Dividends are calculated and paid annually based on your shareholding and the SACCO's annual surplus. Most members receive them in December.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>Can I withdraw my money anytime?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Yes, with a written request. You can withdraw after maintaining a minimum balance of KSh 500 and ensuring you have no outstanding loans.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>How secure is my money?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Your savings are protected through insurance coverage, strict governance standards, and transparent financial management by our board.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-header" onclick="toggleFAQ(this)">
+                    <span>What documents do I need to apply?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-body">
+                    <p>For membership: Valid ID, recent payslips, and employment letter. For loans: The above plus bank statements and collateral details where applicable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Membership Section -->
+<section class="section membership" id="membership">
+    <div class="container">
+        <div class="section-header">
+            <h2>Join RR SACCO Today</h2>
+            <p>Start your journey to financial empowerment</p>
+        </div>
+
+        <div class="membership-wrapper">
+            <div class="membership-form-card">
+                <form id="memberForm" class="membership-form" onsubmit="submitMembership(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" required placeholder="+254 700 000 000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>ID Number *</label>
+                            <input type="text" required placeholder="12345678">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Occupation *</label>
+                            <input type="text" required placeholder="Teacher">
+                        </div>
+                        <div class="form-group">
+                            <label>Employer *</label>
+                            <input type="text" required placeholder="Organization name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Address *</label>
+                            <input type="text" required placeholder="Street address">
+                        </div>
+                        <div class="form-group">
+                            <label>City/Town *</label>
+                            <input type="text" required placeholder="Nairobi">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Initial Shares (KSh) *</label>
+                            <input type="number" required min="500" placeholder="500">
+                        </div>
+                        <div class="form-group">
+                            <label>Next of Kin *</label>
+                            <input type="text" required placeholder="Full name & phone">
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">terms and conditions</a></span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span>I accept the <a href="#">privacy policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Complete Registration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <p>We're here to answer your questions</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Location</h4>
+                <p>Nairobi, Kenya<br>Central Business District</p>
+            </div>
+
+            <div class="contact-info-card">
+                <i class="fas fa-phone"></i>
+                <h4>Phone</h4>
+                <p>+254 700 000 000<br>+254 722 000 000</p>
+            </div>
+
+            <div class="contact-info-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>info@rrsacco.co.ke<br>support@rrsacco.co.ke</p>
+            </div>
+
+            <div class="contact-info-card">
+                <i class="fas fa-clock"></i>
+                <h4>Office Hours</h4>
+                <p>Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+            </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+            <form class="contact-form" onsubmit="submitContact(event)">
+                <h3>Send us a Message</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About RR SACCO</h4>
+                <p>Your trusted partner in financial growth and community prosperity.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#savings">Savings</a></li>
+                    <li><a href="#loans">Loans</a></li>
+                    <li><a href="#investments">Investments</a></li>
+                    <li><a href="#calculator">Calculator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#insights">Insights</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 RR SACCO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <i class="fas fa-check-circle success-icon"></i>
+        <h2 id="modalTitle">Success!</h2>
+        <p id="modalMessage">Your request has been received.</p>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+    // Validation utilities
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    };
+
+    const validatePhone = (phone) => {
+        const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+        return regex.test(phone.replace(/\s/g, ''));
+    };
+
+    const formatCurrency = (amount) => {
+        return new Intl.NumberFormat('en-KE', {
+            style: 'currency',
+            currency: 'KES',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    };
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Close menu on scroll
+    window.addEventListener('scroll', () => {
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Calculator functions
+    function updateCalculator() {
+        const shareAmount = parseFloat(document.getElementById('shareAmount').value) || 0;
+        const maxLoan = shareAmount * 4;
+        document.getElementById('loanLimit').textContent = `Maximum: ${formatCurrency(maxLoan)}`;
+        document.getElementById('loanAmount').max = maxLoan;
+    }
+
+    function updatePeriodDisplay() {
+        const slider = document.getElementById('loanPeriod');
+        document.getElementById('periodValue').textContent = slider.value;
+    }
+
+    function calculateLoan() {
+        const shareAmount = parseFloat(document.getElementById('shareAmount').value);
+        const loanType = document.getElementById('loanType').value;
+        const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+        const loanPeriod = parseInt(document.getElementById('loanPeriod').value);
+
+        if (!shareAmount || shareAmount < 500) {
+            showNotification('Minimum shares is KSh 500', 'error');
+            return;
+        }
+
+        if (!loanAmount || loanAmount <= 0) {
+            showNotification('Please enter a valid loan amount', 'error');
+            return;
+        }
+
+        const maxLoan = shareAmount * 4;
+        if (loanAmount > maxLoan) {
+            showNotification(`Max loan: ${formatCurrency(maxLoan)}`, 'error');
+            return;
+        }
+
+        const rates = {
+            development: 0.11,
+            emergency: 0.07,
+            education: 0.09
+        };
+
+        const rate = rates[loanType];
+        const fee = loanType === 'development' ? loanAmount * 0.02 : 0;
+        const interest = (loanAmount * rate * loanPeriod) / 12;
+        const total = loanAmount + interest + fee;
+        const monthly = total / loanPeriod;
+
+        document.getElementById('resLoanAmt').textContent = formatCurrency(loanAmount);
+        document.getElementById('resRate').textContent = (rate * 100) + '%';
+        document.getElementById('resFee').textContent = formatCurrency(fee);
+        document.getElementById('resInterest').textContent = formatCurrency(interest);
+        document.getElementById('resTotal').textContent = formatCurrency(total);
+        document.getElementById('resMonthly').textContent = formatCurrency(monthly);
+
+        document.getElementById('calcResults').style.display = 'block';
+        document.getElementById('calcResults').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // FAQ toggle
+    function toggleFAQ(button) {
+        const body = button.nextElementSibling;
+        const allBodies = document.querySelectorAll('.faq-body');
+        const allHeaders = document.querySelectorAll('.faq-header');
+
+        allBodies.forEach(b => {
+            if (b !== body) b.classList.remove('show');
+        });
+
+        allHeaders.forEach(h => {
+            if (h !== button) h.classList.remove('active');
+        });
+
+        body.classList.toggle('show');
+        button.classList.toggle('active');
+    }
+
+    // Form submissions
+    function submitMembership(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+
+        localStorage.setItem('membershipApplications', JSON.stringify([
+            ...(JSON.parse(localStorage.getItem('membershipApplications') || '[]')),
+            { ...data, timestamp: new Date().toISOString() }
+        ]));
+
+        showSuccess('Registration Successful!', 'Your application has been received. We will contact you within 2-3 business days.');
+        event.target.reset();
+    }
+
+    function submitContact(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+
+        localStorage.setItem('contactMessages', JSON.stringify([
+            ...(JSON.parse(localStorage.getItem('contactMessages') || '[]')),
+            { ...data, timestamp: new Date().toISOString() }
+        ]));
+
+        showSuccess('Message Sent!', 'Thank you. We will get back to you shortly.');
+        event.target.reset();
+    }
+
+    // Notifications
+    function showNotification(message, type) {
+        const div = document.createElement('div');
+        div.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            background: ${type === 'error' ? '#dc3545' : '#28a745'};
+            color: white;
+            border-radius: 5px;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        `;
+        div.textContent = message;
+        document.body.appendChild(div);
+
+        setTimeout(() => div.remove(), 3000);
+    }
+
+    function showSuccess(title, message) {
+        const modal = document.getElementById('successModal');
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalMessage').textContent = message;
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+    }
+
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('successModal');
+        if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCalculator();
+        document.getElementById('shareAmount').addEventListener('change', updateCalculator);
+    });
+</script>
+
+</body>
+</html>
